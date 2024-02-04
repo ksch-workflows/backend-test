@@ -5,14 +5,24 @@
 ### Re-generate Java SDK
 
 ```sh
-docker run --rm -v "${PWD}:/local" openapitools/openapi-generator-cli generate \
+TEMP_DIR=$(mktemp -d)
+
+# Generate code
+docker run --rm -v "${TEMP_DIR}:/local" openapitools/openapi-generator-cli generate \
     -i https://raw.githubusercontent.com/ksch-workflows/backend/main/docs/openapi.yml \
     -g java \
-    --library native \
-    -o /local/src/main/java
+    --additional-properties=library=native,apiPackage=ksch,invokerPackage=ksch,modelPackage=ksch.model \
+    -o /local
+    
+# Adopt generated code
+rm -rf src/main/java && mkdir -p src/main && cp -r $TEMP_DIR/src/main/java src/main/
+
+# Normalize generated code
+find . -name "*.java" | xargs -I{} perl -pi -e 's/.*javax.*//g;' {}
 ```
 
 **Also see**
 
 - https://github.com/OpenAPITools/openapi-generator
 - https://openapi-generator.tech/docs/generators/java/
+- https://openapi-generator.tech/docs/configuration/
