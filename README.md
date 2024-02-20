@@ -1,5 +1,29 @@
 # Backend Test
 
+> Acceptance test suite for the REST API provided by the [backend](https://github.com/ksch-workflows/backend) service
+
+## Dependencies
+
+- Java17+
+- Docker
+
+## Usage
+
+### Run tests
+
+```sh
+docker compose up -d
+
+./gradlew test
+```
+
+### Write new tests
+
+**Also see**
+
+- https://cucumber.io/
+- https://www.baeldung.com/java-cucumber-gradle
+
 ## Maintenance
 
 ### Re-generate Java SDK
@@ -26,3 +50,7 @@ find . -name "*.java" | xargs -I{} perl -pi -e 's/.*javax.*//g;' {}
 - https://github.com/OpenAPITools/openapi-generator
 - https://openapi-generator.tech/docs/generators/java/
 - https://openapi-generator.tech/docs/configuration/
+
+## References
+
+- https://api.experimental-software.com/
