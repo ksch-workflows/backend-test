@@ -5,6 +5,7 @@
 ## Dependencies
 
 - Java17+
+- Maven
 - Docker
 
 ## Usage
@@ -12,9 +13,7 @@
 ### Run tests
 
 ```sh
-docker compose up -d
-
-./gradlew test
+mvn test
 ```
 
 ### Write new tests
@@ -22,7 +21,6 @@ docker compose up -d
 **Also see**
 
 - https://cucumber.io/
-- https://www.baeldung.com/java-cucumber-gradle
 
 ## Maintenance
 
