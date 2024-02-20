@@ -7,6 +7,8 @@ import org.junit.platform.suite.api.Suite;
 
 import static io.cucumber.junit.platform.engine.Constants.PLUGIN_PROPERTY_NAME;
 
+import io.cucumber.junit.platform.engine.Constants;
+
 @Suite
 @IncludeEngines("cucumber")
 @SelectClasspathResource("spec")
