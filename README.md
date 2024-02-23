@@ -5,7 +5,6 @@
 ## Dependencies
 
 - Java17+
-- Maven
 - Docker
 
 ## Usage
@@ -13,16 +12,8 @@
 ### Run tests
 
 ```sh
-mvn test
+./gradlew test
 ```
-
-### Write new tests
-
-**Also see**
-
-- https://cucumber.io/
-- https://github.com/cucumber/cucumber-jvm/tree/main/cucumber-spring
-- [Integrating Cucumber into a Spring Boot Project: A Step-by-Step Guide | medium.com/@francislainy.campos](https://medium.com/@francislainy.campos/integrating-cucumber-into-a-spring-boot-project-a-step-by-step-guide-f899c04bf81f)
 
 ## Maintenance
 
